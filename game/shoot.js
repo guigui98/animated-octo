@@ -67,6 +67,10 @@ function player_collision()
         player1.graphic.position.y -= y;
     if ( y > HEIGHT )
         player1.graphic.position.y -= y - HEIGHT;
+    //add
+    if ( x < 0 )
+        player1.graphic.position.x -= x;
+    //end
 
 }
 
@@ -93,7 +97,14 @@ function player_falling()
             && (y > tileY) 
             && (y < mtileY))
         {
-           player1.dead();
+           player1.life--;
+           player1.position.x = 50;
+           player1.position.y = 0;
+           player1.position.z = 6;
+           if (player1.life === 0)
+           {
+               player1.dead();
+           }
         }
     }
 
