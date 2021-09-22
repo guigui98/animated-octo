@@ -28,6 +28,8 @@ function init()
     
     player1 = new Player("player1", 0xffff00, new THREE.Vector2(50, 0), 0);
     scene.add(player1.graphic);
+    ennemy = new Ennemy("ennemy", 0xffff11, new THREE.Vector2(-10, 30));
+    scene.add(ennemy.graphic);
     //add
    /* for (let i = 0; i < 5; i++)
     {
